@@ -99,13 +99,13 @@ void getBuildingName(char *str){
 
 int main(){
     int c, i = 0;
-    char str[4], *p = str;
+    char str[4];
     while(1){
         printf("Enter the building code: ");
         while((c = getchar()) != EOF && c != '\n'){
         	str[i++] = toupper(c);
         }
-    	getBuildingName(p);
+    	getBuildingName(str);
         printf("\n");
     	i = 0;
     }

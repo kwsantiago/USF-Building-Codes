@@ -94,10 +94,12 @@ def getBuildingName(code):
         tkinter.messagebox.showinfo("Code", "Invalid building code.")
     return
 
-root = Tk()
+def main():
+    root = Tk()
+    root.withdraw()
 
-code = tkinter.simpledialog.askstring("code", "Enter a code: ")
+    code = tkinter.simpledialog.askstring("code", "Enter a code: ")
+    getBuildingName(code)
+    root.destroy()
 
-getBuildingName(code)
-
-root.mainloop()
+main()

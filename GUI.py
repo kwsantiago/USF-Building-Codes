@@ -98,8 +98,9 @@ def main():
     root = Tk()
     root.withdraw()
 
-    code = tkinter.simpledialog.askstring("code", "Enter a code: ")
+    code = tkinter.simpledialog.askstring(root, "Enter a code: ")
     getBuildingName(code)
+
     root.destroy()
 
 main()

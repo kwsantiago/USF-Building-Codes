@@ -103,8 +103,11 @@ int main(){
     while(1){
         printf("Enter the building code: ");
         while((c = getchar()) != EOF && c != '\n'){
+            if(c == ' ')
+                continue;
         	str[i++] = toupper(c);
         }
+        str[i] = '\0';
     	getBuildingName(str);
         printf("\n");
     	i = 0;

@@ -112,6 +112,5 @@ int main(){
         printf("\n");
     	i = 0;
     }
-	
 	return 0; 
 }

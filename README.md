@@ -4,3 +4,5 @@ For example, MAF is Magnolia F. But for some of them they are more difficult, e
 This program lets you input the three digit code (case-insensitive) and it will output the building name for you. 
 I plan on making it look nicer and adding a few more features, but the basics are there already. 
 
+![Screenshot](example.png)
+

@@ -187,14 +187,26 @@ def getBuildingName(code):
         tkinter.messagebox.showinfo("Name", "Invalid building code.")
     return
 
-def openAbout():
+def openMercury():
+    webbrowser.open('https://jupiter.forest.usf.edu/')
+
+def openVillageCodes():
+    webbrowser.open('https://usflearn.instructure.com/courses/1143753/files?preview=91364484')
+
+def openNorthSouthCodes():
+    webbrowser.open('https://usflearn.instructure.com/courses/1143753/files?preview=91091270')
+
+def openHelp():
     webbrowser.open('https://github.com/kwsantiago/USF-Building-Converter-GUI')
+
+def openUSF():
+    webbrowser.open('https://www.usf.edu/housing/')
 
 def menu(root):
     menu = Menu(root)
     root.config(menu=menu)
 
-    menu.add_command(label="Help", command=lambda: openAbout().pack())
+    menu.add_command(label="Help", command=lambda: openHelp().pack())
 
 def canvas(root):
     canvas = tkinter.Canvas(root, height=HEIGHT, width=WIDTH)
@@ -210,17 +222,27 @@ def initUI():
 
     background_image = tkinter.PhotoImage(file='usf.gif')
     background_label = tkinter.Label(root, image=background_image)
+    background_label.bind("<Button-1>", lambda event: openUSF())
     background_label.place(relwidth=1, relheight=1)
 
-    frame = tkinter.Frame(root, bg='#80c1ff', bd=5)
+    frame = tkinter.Frame(root, bg='#006649', bd=5)
     frame.place(relx=0.5, rely=0.0, relwidth=1, relheight=0.1, anchor='n')
 
     entry = tkinter.Entry(frame, font=40)
     entry.bind("<Return>", lambda event: getBuildingName(entry.get()))
     entry.place(relwidth=0.65, relheight=1)
 
-    button = tkinter.Button(frame, text="Get Answer", font=40, command=lambda: getBuildingName(entry.get()))
-    button.place(relx=0.7, relheight=1, relwidth=0.3)
+    answerButton = tkinter.Button(frame, text="Get Answer", font=40, command=lambda: getBuildingName(entry.get()))
+    answerButton.place(relx=0.7, relheight=1, relwidth=0.3)
+
+    temp = tkinter.Button(background_label, text="Mercury", font=40, command=lambda: openMercury().pack)
+    temp.place(relx=0.0, rely=0.95, relheight=0.05, relwidth=0.225)
+
+    temp = tkinter.Button(background_label, text="Village Codes", font=40, command=lambda: openVillageCodes())
+    temp.place(relx=0.2325, rely=0.95, relheight=0.05, relwidth=0.35)
+
+    temp = tkinter.Button(background_label, text="Other Codes", font=40, command=lambda: openNorthSouthCodes())
+    temp.place(relx=0.59, rely=0.95, relheight=0.05, relwidth=0.4)
 
     root.mainloop()
 

@@ -203,6 +203,7 @@ def canvas(root):
 def initUI():
     root = Tk()
     root.title('Building Code to Name Converter - By Kyle Santiago')
+    root.iconbitmap('usf.ico')
 
     menu(root)
     canvas(root)

@@ -103,9 +103,10 @@ root = Tk()
 canvas = tkinter.Canvas(root, height=HEIGHT, width=WIDTH)
 canvas.pack()
 
-background_image = tkinter.PhotoImage(file='usf.png')
+background_image = tkinter.PhotoImage(file='usf.gif')
 background_label = tkinter.Label(root, image=background_image)
 background_label.place(relwidth=1, relheight=1)
+
 
 frame = tkinter.Frame(root, bg='#80c1ff', bd=5)
 frame.place(relx=0.5, rely=0.0, relwidth=1, relheight=0.1, anchor='n')

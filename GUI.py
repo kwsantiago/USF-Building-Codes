@@ -216,6 +216,7 @@ def initUI():
     frame.place(relx=0.5, rely=0.0, relwidth=1, relheight=0.1, anchor='n')
 
     entry = tkinter.Entry(frame, font=40)
+    entry.bind("<Return>", lambda event: getBuildingName(entry.get()))
     entry.place(relwidth=0.65, relheight=1)
 
     button = tkinter.Button(frame, text="Get Answer", font=40, command=lambda: getBuildingName(entry.get()))

@@ -190,31 +190,39 @@ def getBuildingName(code):
 def openAbout():
     webbrowser.open('https://github.com/kwsantiago/USF-Building-Converter-GUI')
 
-root = Tk()
-root.title('Building Code to Name Converter - By Kyle Santiago')
+def menu(root):
+    menu = Menu(root)
+    root.config(menu=menu)
 
-#MENU
-menu = Menu(root)
-root.config(menu=menu)
+    menu.add_command(label="Help", command=lambda: openAbout().pack())
 
-menu.add_command(label="Help", command=lambda: openAbout().pack())
-#MENU
+def canvas(root):
+    canvas = tkinter.Canvas(root, height=HEIGHT, width=WIDTH)
+    canvas.pack()
 
-canvas = tkinter.Canvas(root, height=HEIGHT, width=WIDTH)
-canvas.pack()
+def initUI():
+    root = Tk()
+    root.title('Building Code to Name Converter - By Kyle Santiago')
 
-background_image = tkinter.PhotoImage(file='usf.gif')
-background_label = tkinter.Label(root, image=background_image)
-background_label.place(relwidth=1, relheight=1)
+    menu(root)
+    canvas(root)
 
+    background_image = tkinter.PhotoImage(file='usf.gif')
+    background_label = tkinter.Label(root, image=background_image)
+    background_label.place(relwidth=1, relheight=1)
 
-frame = tkinter.Frame(root, bg='#80c1ff', bd=5)
-frame.place(relx=0.5, rely=0.0, relwidth=1, relheight=0.1, anchor='n')
+    frame = tkinter.Frame(root, bg='#80c1ff', bd=5)
+    frame.place(relx=0.5, rely=0.0, relwidth=1, relheight=0.1, anchor='n')
 
-entry = tkinter.Entry(frame, font=40)
-entry.place(relwidth=0.65, relheight=1)
+    entry = tkinter.Entry(frame, font=40)
+    entry.place(relwidth=0.65, relheight=1)
 
-button = tkinter.Button(frame, text="Get Answer", font=40, command=lambda: getBuildingName(entry.get()))
-button.place(relx=0.7, relheight=1, relwidth=0.3)
+    button = tkinter.Button(frame, text="Get Answer", font=40, command=lambda: getBuildingName(entry.get()))
+    button.place(relx=0.7, relheight=1, relwidth=0.3)
 
-root.mainloop()
+    root.mainloop()
+
+def main():
+    initUI()
+
+main()

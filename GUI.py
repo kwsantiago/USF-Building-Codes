@@ -1,6 +1,7 @@
 from tkinter import *
 import tkinter.messagebox, tkinter.simpledialog
 import requests
+import webbrowser
 
 HEIGHT = 400
 WIDTH = 400
@@ -186,8 +187,18 @@ def getBuildingName(code):
         tkinter.messagebox.showinfo("Name", "Invalid building code.")
     return
 
+def openAbout():
+    webbrowser.open('https://github.com/kwsantiago/USF-Building-Converter-GUI')
+
 root = Tk()
 root.title('Building Code to Name Converter - By Kyle Santiago')
+
+#MENU
+menu = Menu(root)
+root.config(menu=menu)
+
+menu.add_command(label="Help", command=lambda: openAbout().pack())
+#MENU
 
 canvas = tkinter.Canvas(root, height=HEIGHT, width=WIDTH)
 canvas.pack()

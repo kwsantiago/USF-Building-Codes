@@ -5,5 +5,4 @@ For example, HAG is Holly G. But for some of them they are more difficult, espe
 This program lets you input the three digit code or building name (both case-insensitive) and it will output the building name or code for you. It also has useful links for desk clerks.
 
 ![Screenshot](example.png)
-![Screenshot](example1.png)
 

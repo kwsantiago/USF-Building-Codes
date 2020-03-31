@@ -1,6 +1,5 @@
 from tkinter import *
 import tkinter.messagebox, tkinter.simpledialog
-import requests
 import webbrowser
 
 HEIGHT = 400

@@ -199,9 +199,6 @@ def openNorthSouthCodes():
 def openHelp():
     webbrowser.open('https://github.com/kwsantiago/USF-Building-Converter-GUI')
 
-def openUSF():
-    webbrowser.open('https://www.usf.edu/housing/')
-
 def menu(root):
     menu = Menu(root)
     root.config(menu=menu)
@@ -222,7 +219,6 @@ def initUI():
 
     background_image = tkinter.PhotoImage(file='usf.gif')
     background_label = tkinter.Label(root, image=background_image)
-    background_label.bind("<Button-1>", lambda event: openUSF())
     background_label.place(relwidth=1, relheight=1)
 
     frame = tkinter.Frame(root, bg='#006649', bd=5)
@@ -236,13 +232,13 @@ def initUI():
     answerButton.place(relx=0.7, relheight=1, relwidth=0.3)
 
     temp = tkinter.Button(background_label, text="Mercury", font=40, command=lambda: openMercury().pack)
-    temp.place(relx=0.0, rely=0.95, relheight=0.05, relwidth=0.225)
+    temp.place(relx=0.0, rely=0.93, relheight=0.07, relwidth=0.225)
 
     temp = tkinter.Button(background_label, text="Village Codes", font=40, command=lambda: openVillageCodes())
-    temp.place(relx=0.2325, rely=0.95, relheight=0.05, relwidth=0.35)
+    temp.place(relx=0.2325, rely=0.93, relheight=0.07, relwidth=0.35)
 
     temp = tkinter.Button(background_label, text="Other Codes", font=40, command=lambda: openNorthSouthCodes())
-    temp.place(relx=0.59, rely=0.95, relheight=0.05, relwidth=0.4)
+    temp.place(relx=0.59, rely=0.93, relheight=0.07, relwidth=0.4)
 
     root.mainloop()
 

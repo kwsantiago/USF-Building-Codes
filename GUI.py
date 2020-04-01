@@ -189,11 +189,8 @@ def getBuildingName(code):
 def openMercury():
     webbrowser.open('https://jupiter.forest.usf.edu/')
 
-def openVillageCodes():
-    webbrowser.open('https://usflearn.instructure.com/courses/1143753/files?preview=91364484')
-
-def openNorthSouthCodes():
-    webbrowser.open('https://usflearn.instructure.com/courses/1143753/files?preview=91091270')
+def openFiles():
+    webbrowser.open('https://usflearn.instructure.com/courses/1143753/files?')
 
 def openHelp():
     webbrowser.open('https://github.com/kwsantiago/USF-Building-Converter-GUI')
@@ -230,14 +227,11 @@ def initUI():
     answerButton = tkinter.Button(frame, text="Get Answer", font=40, command=lambda: getBuildingName(entry.get()))
     answerButton.place(relx=0.7, relheight=1, relwidth=0.3)
 
-    temp = tkinter.Button(background_label, text="Mercury", font=40, command=lambda: openMercury().pack)
-    temp.place(relx=0.01, rely=0.93, relheight=0.07, relwidth=0.225)
+    temp = tkinter.Button(background_label, text="Mercury", font=40, command=lambda: openMercury())
+    temp.place(relx=0.001, rely=0.93, relheight=0.07, relwidth=0.5)
 
-    temp = tkinter.Button(background_label, text="Village Codes", font=40, command=lambda: openVillageCodes())
-    temp.place(relx=0.243, rely=0.93, relheight=0.07, relwidth=0.35)
-
-    temp = tkinter.Button(background_label, text="Other Codes", font=40, command=lambda: openNorthSouthCodes())
-    temp.place(relx=0.6, rely=0.93, relheight=0.07, relwidth=0.4)
+    temp = tkinter.Button(background_label, text="Files", font=40, command=lambda: openFiles())
+    temp.place(relx=0.51, rely=0.93, relheight=0.07, relwidth=0.5)
 
     root.mainloop()
 
